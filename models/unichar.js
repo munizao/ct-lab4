@@ -8,8 +8,4 @@ const schema = new mongoose.Schema({
   codePoint: { type: Number, min: 0 }
 });
 
-Unichar = mongoose.model('Unichar', schema);
-
-const unichar = new Unichar({});
-
-module.exports = Unichar;
+module.exports = mongoose.model('Unichar', schema);
