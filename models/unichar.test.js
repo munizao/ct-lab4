@@ -14,6 +14,6 @@ describe('Unichar model', () => {
   it('has a deprecated value that can cast to boolean', () => {
     const unichar = new Unichar({ name: 'A', codePoint: -1, deprecated: [1, 2, 3, 4] });
     expect(unichar.validateSync().errors.deprecated.message)
-      .toEqual('Cast to Boolean failed for value \"[ 1, 2, 3, 4 ]\" at path \"deprecated\"');
+      .toEqual('Cast to Boolean failed for value "[ 1, 2, 3, 4 ]" at path "deprecated"');
   });
 });
