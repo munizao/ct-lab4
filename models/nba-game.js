@@ -1,10 +1,5 @@
 const mongoose = require('mongoose');
 
-const score = new mongoose.Schema({
-  type: Number,
-  min: 0
-});
-
 const schema = new mongoose.Schema({
   tipoff: { 
     type: Date,
@@ -12,10 +7,12 @@ const schema = new mongoose.Schema({
   },
   teams: [String],
   scores: {
-    type: [score],
-    required: true,
-    maxlength: 2,
-    minlength: 2
+    type: [Number],
+    default: [0, 0],
+    validate: [{ validator: val => val.length === 2, msg: 'There must be exactly two scores.' }, 
+      { validator: val => val.every(score => score >= 0), msg: 'There must be no negative scores.' },
+      { validator: val => val.every(score => score.isInteger), msg: 'Scores must be integers.' }
+    ]
   }
 });
 
