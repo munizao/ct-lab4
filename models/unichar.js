@@ -6,7 +6,7 @@ const schema = new mongoose.Schema({
     required: true
   },
   codePoint: { type: Number, min: 0 },
-  deprecated: { type: Boolean, default: false}
+  deprecated: { type: Boolean, default: false }
 });
 
 module.exports = mongoose.model('Unichar', schema);
