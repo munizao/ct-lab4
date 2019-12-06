@@ -24,7 +24,7 @@ describe('Address model', () => {
   it('has a state that is not too short', () => {
     const address = new Address({ state: 'O' });
     expect(address.validateSync().errors.state.message)
-      .toEqual('Path `state` (`O`) is shorter than the minimum allowed length (2)');
+      .toEqual('Path `state` (`O`) is shorter than the minimum allowed length (2).');
   });
   it('has a required zipcode', () => {
     const address = new Address({});
