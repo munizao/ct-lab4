@@ -1,16 +1,16 @@
 const mongoose = require('mongoose');
 
 const schema = new mongoose.Schema({
-  track = {
+  track: {
     type: Number,
     min: 1,
     max: 99
   },
-  performer = { 
+  performer: { 
     type: String,
     required: true
   },
-  title = { 
+  title: { 
     type: String,
     required: true
   },
