@@ -18,3 +18,6 @@ const schema = new mongoose.Schema({
     minlength: 2
   }
 });
+
+module.exports = mongoose.model('NBAGame', schema);
+
