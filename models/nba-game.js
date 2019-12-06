@@ -11,7 +11,7 @@ const schema = new mongoose.Schema({
     default: [0, 0],
     validate: [{ validator: val => val.length === 2, msg: 'There must be exactly two scores.' }, 
       { validator: val => val.every(score => score >= 0), msg: 'There must be no negative scores.' },
-      { validator: val => val.every(score => score.isInteger), msg: 'Scores must be integers.' }
+      { validator: val => val.every(Number.isInteger), msg: 'Scores must be integers.' }
     ]
   }
 });
