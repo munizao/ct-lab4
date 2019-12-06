@@ -8,7 +8,7 @@ const score = new mongoose.Schema({
 const schema = new mongoose.Schema({
   tipoff: { 
     type: Date,
-    required = true
+    required: true
   },
   teams: [String],
   scores: {
