@@ -13,4 +13,16 @@ describe('nbaGame model', () => {
       .toEqual('Cast to Array failed for value "[ -1, 0 ]" at path "scores"');
   });
 
+  it('does not have too many scores', () => {
+    const nbaGame = new NBAGame({ tipoff: Date.now(), scores: [10, 20, 30] });
+    expect(nbaGame.validateSync().errors.scores.message)
+      .toEqual('');
+  });
+
+  it('does not have too few scores', () => {
+    const nbaGame = new NBAGame({ tipoff: Date.now(), scores: [10] });
+    expect(nbaGame.validateSync().errors.scores.message)
+      .toEqual('');
+  });
+
 });
